@@ -1,13 +1,8 @@
 import { Helmet } from 'react-helmet-async';
-import Navigation from '../components/Navigation/Navigation';
-import Hero from '../components/Hero/Hero';
-import About from '../components/About/About';
-import Skills from '../components/Skills/Skills';
-import Projects from '../components/Projects/Projects';
-import Experience from '../components/Experience/Experience';
-import Contact from '../components/Contact/Contact';
-import Footer from '../components/Footer/Footer';
 import Background from '../components/Background/Background';
+import Footer from '../components/Footer/Footer';
+import Hero from '../components/Hero/Hero';
+import Navigation from '../components/Navigation/Navigation';
 
 const Home = () => {
   return (
@@ -50,11 +45,6 @@ const Home = () => {
       <Navigation />
       <main id="main-content">
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
       </main>
       <Footer />
     </div>

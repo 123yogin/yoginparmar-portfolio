@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Download } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import resumeFile from '../../assets/YOGIN-PARMAR-Java Resume-20251125.pdf';
+import Logo from '../../assets/logo.svg';
 import './Navigation.css';
 
 const Navigation = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -13,40 +15,36 @@ const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
-      // Update active section based on scroll position
-      const sections = ['home', 'about', 'projects', 'skills', 'experience', 'contact'];
-      const scrollPosition = window.scrollY + 150;
-      
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
-        }
-      }
     };
+
+    // Update active section based on current route
+    const pathToSection = {
+      '/': 'home',
+      '/about': 'about',
+      '/projects': 'projects',
+      '/skills': 'skills',
+      '/experience': 'experience',
+      '/contact': 'contact',
+      '/blog': 'blog'
+    };
+
+    // Check if pathname matches a section or starts with a section path
+    const currentPath = location.pathname;
+    if (currentPath === '/') {
+      setActiveSection('home');
+    } else if (currentPath.startsWith('/projects')) {
+      setActiveSection('projects');
+    } else if (currentPath.startsWith('/blog')) {
+      setActiveSection('blog');
+    } else {
+      setActiveSection(pathToSection[currentPath] || 'home');
+    }
 
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80; // Account for fixed navbar
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      setIsMobileMenuOpen(false);
-      setActiveSection(id);
-    }
-  };
 
   const downloadResume = () => {
     const link = document.createElement('a');
@@ -62,62 +60,70 @@ const Navigation = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="nav-container">
-        <Link to="/" className="nav-logo" onClick={() => { if (location.pathname === '/') scrollToSection('home'); }}>
-          YP
+        <Link to="/" className="nav-logo" onClick={() => { setIsMobileMenuOpen(false); setActiveSection('home'); }}>
+          <img src={Logo} alt="Yogin Parmar Logo" className="nav-logo-img" />
         </Link>
 
         <div className="nav-links">
-          <a 
-            href="#home" 
-            className={activeSection === 'home' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
-            aria-label="Navigate to Home section"
+          <Link 
+            to="/"
+            data-text="Home"
+            className={location.pathname === '/' ? 'active' : ''}
+            onClick={() => { setIsMobileMenuOpen(false); setActiveSection('home'); }}
+            aria-label="Navigate to Home"
           >
             Home
-          </a>
-          <a 
-            href="#about" 
-            className={activeSection === 'about' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
-            aria-label="Navigate to About section"
+          </Link>
+          <Link 
+            to="/about"
+            data-text="About"
+            className={location.pathname === '/about' ? 'active' : ''}
+            onClick={() => { setIsMobileMenuOpen(false); setActiveSection('about'); }}
+            aria-label="Navigate to About"
           >
             About
-          </a>
-          <a 
-            href="#projects" 
-            className={activeSection === 'projects' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}
-            aria-label="Navigate to Projects section"
+          </Link>
+          <Link 
+            to="/projects"
+            data-text="Projects"
+            className={location.pathname === '/projects' || location.pathname.startsWith('/projects/') ? 'active' : ''}
+            onClick={() => { setIsMobileMenuOpen(false); setActiveSection('projects'); }}
+            aria-label="Navigate to Projects"
           >
             Projects
-          </a>
-          <a 
-            href="#skills" 
-            className={activeSection === 'skills' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}
-            aria-label="Navigate to Skills section"
+          </Link>
+          <Link 
+            to="/skills"
+            data-text="Skills"
+            className={location.pathname === '/skills' ? 'active' : ''}
+            onClick={() => { setIsMobileMenuOpen(false); setActiveSection('skills'); }}
+            aria-label="Navigate to Skills"
           >
             Skills
-          </a>
-          <a 
-            href="#experience" 
-            className={activeSection === 'experience' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}
-            aria-label="Navigate to Experience section"
+          </Link>
+          <Link 
+            to="/experience"
+            data-text="Experience"
+            className={location.pathname === '/experience' ? 'active' : ''}
+            onClick={() => { setIsMobileMenuOpen(false); setActiveSection('experience'); }}
+            aria-label="Navigate to Experience"
           >
             Experience
-          </a>
-          <a 
-            href="#contact" 
-            className={activeSection === 'contact' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
-            aria-label="Navigate to Contact section"
+          </Link>
+          <Link 
+            to="/contact"
+            data-text="Contact"
+            className={location.pathname === '/contact' ? 'active' : ''}
+            onClick={() => { setIsMobileMenuOpen(false); setActiveSection('contact'); }}
+            aria-label="Navigate to Contact"
           >
             Contact
-          </a>
+          </Link>
           <Link 
             to="/blog"
-            className={location.pathname === '/blog' ? 'active' : ''}
+            data-text="Blog"
+            className={location.pathname === '/blog' || location.pathname.startsWith('/blog/') ? 'active' : ''}
+            onClick={() => { setIsMobileMenuOpen(false); }}
             aria-label="Navigate to Blog"
           >
             Blog
@@ -140,51 +146,51 @@ const Navigation = () => {
       </div>
 
       <div className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-        <a 
-          href="#home" 
-          className={activeSection === 'home' ? 'active' : ''}
-          onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
+        <Link 
+          to="/"
+          className={location.pathname === '/' ? 'active' : ''}
+          onClick={() => { setIsMobileMenuOpen(false); setActiveSection('home'); }}
         >
           Home
-        </a>
-        <a 
-          href="#about" 
-          className={activeSection === 'about' ? 'active' : ''}
-          onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
+        </Link>
+        <Link 
+          to="/about"
+          className={location.pathname === '/about' ? 'active' : ''}
+          onClick={() => { setIsMobileMenuOpen(false); setActiveSection('about'); }}
         >
           About
-        </a>
-        <a 
-          href="#projects" 
-          className={activeSection === 'projects' ? 'active' : ''}
-          onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}
+        </Link>
+        <Link 
+          to="/projects"
+          className={location.pathname === '/projects' || location.pathname.startsWith('/projects/') ? 'active' : ''}
+          onClick={() => { setIsMobileMenuOpen(false); setActiveSection('projects'); }}
         >
           Projects
-        </a>
-        <a 
-          href="#skills" 
-          className={activeSection === 'skills' ? 'active' : ''}
-          onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}
+        </Link>
+        <Link 
+          to="/skills"
+          className={location.pathname === '/skills' ? 'active' : ''}
+          onClick={() => { setIsMobileMenuOpen(false); setActiveSection('skills'); }}
         >
           Skills
-        </a>
-        <a 
-          href="#experience" 
-          className={activeSection === 'experience' ? 'active' : ''}
-          onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}
+        </Link>
+        <Link 
+          to="/experience"
+          className={location.pathname === '/experience' ? 'active' : ''}
+          onClick={() => { setIsMobileMenuOpen(false); setActiveSection('experience'); }}
         >
           Experience
-        </a>
-        <a 
-          href="#contact" 
-          className={activeSection === 'contact' ? 'active' : ''}
-          onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
+        </Link>
+        <Link 
+          to="/contact"
+          className={location.pathname === '/contact' ? 'active' : ''}
+          onClick={() => { setIsMobileMenuOpen(false); setActiveSection('contact'); }}
         >
           Contact
-        </a>
+        </Link>
         <Link 
           to="/blog"
-          className={location.pathname === '/blog' ? 'active' : ''}
+          className={location.pathname === '/blog' || location.pathname.startsWith('/blog/') ? 'active' : ''}
           onClick={() => setIsMobileMenuOpen(false)}
         >
           Blog
