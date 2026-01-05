@@ -1,0 +1,89 @@
+.code-snippet {
+  background-color: var(--color-bg-surface);
+  border: 2px solid var(--color-accent-cyan);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.code-snippet:hover {
+  border-color: var(--color-accent-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.code-snippet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-purple), var(--color-accent-amber));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.code-content {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: auto;
+  overflow-y: hidden;
+  color: var(--color-text-secondary);
+  position: relative;
+  z-index: 1;
+  font-variant-ligatures: none;
+  tab-size: 4;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  letter-spacing: 0;
+  display: block;
+}
+
+.code-content code {
+  display: block;
+  white-space: pre;
+  font-family: inherit;
+}
+
+.code-keyword {
+  color: var(--color-accent-cyan);
+  font-weight: 600;
+}
+
+.code-string {
+  color: var(--color-accent-amber);
+  font-weight: 500;
+}
+
+.code-function {
+  color: var(--color-accent-purple);
+  font-weight: 500;
+}
+
+.code-comment {
+  color: var(--color-text-tertiary);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.code-cursor {
+  color: var(--color-accent-cyan);
+  animation: blink 1s infinite;
+}
+
+@media (max-width: 768px) {
+  .code-snippet {
+    font-size: 12px;
+    padding: 16px;
+  }
+}
+

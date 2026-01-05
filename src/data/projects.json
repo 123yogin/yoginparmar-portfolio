@@ -1,0 +1,409 @@
+[
+  {
+    "id": "intellihire-platform",
+    "title": "IntelliHire Platform",
+    "tier": "tier1",
+    "status": "production",
+    "categories": ["AI/ML", "Full Stack", "Computer Vision"],
+    "technologies": ["Python", "OpenCV", "TensorFlow", "Flask", "HTML5", "CSS3", "JavaScript"],
+    "description": "AI-powered proctored testing platform with real-time monitoring using computer vision and NLP. Automated anomaly detection reduces manual oversight by 50%.",
+    "longDescription": "IntelliHire is a sophisticated proctoring solution leveraging computer vision and NLP to monitor exam integrity in real-time. Features facial recognition for identity verification, eye-tracking to detect unauthorized material viewing, and speech analysis for collaboration detection. The Flask backend manages exam logistics while the responsive frontend provides seamless UX for administrators and test-takers. ML models achieve 95% accuracy in anomaly detection.",
+    "problemStatement": "Traditional proctoring systems require constant human monitoring, making them expensive, unscalable, and prone to human error. Educational institutions and certification bodies need an automated solution that can monitor multiple exams simultaneously while maintaining high accuracy in detecting cheating behaviors. The challenge was to build a system that could process real-time video streams, analyze behavioral patterns, and flag anomalies without false positives that would disrupt legitimate test-takers.",
+    "architecture": "The system follows a microservices-inspired architecture with clear separation of concerns. Frontend (React/HTML5) handles video capture and real-time UI updates. Flask backend serves as the API gateway, managing exam sessions, user authentication, and coordinating ML services. Computer vision pipeline uses OpenCV for real-time video processing, extracting frames at 30fps. TensorFlow models run inference on GPU-accelerated servers for facial recognition and eye-tracking. NLP service processes audio streams for speech analysis. Redis handles session management and real-time data streaming. PostgreSQL stores exam records, user data, and flagged incidents. The architecture supports horizontal scaling with load balancing for concurrent exam sessions.",
+    "tradeOffs": [
+      "Chose Flask over FastAPI for faster development and team familiarity, trading some performance for maintainability",
+      "Used OpenCV for real-time processing instead of cloud vision APIs to reduce latency and costs, accepting the need for local GPU infrastructure",
+      "Implemented frame sampling (every 10th frame) to balance accuracy vs performance, reducing processing load by 90% with minimal accuracy loss",
+      "Selected PostgreSQL over MongoDB for structured exam data, prioritizing ACID compliance over schema flexibility",
+      "Chose client-side video processing to reduce server load, trading some security for scalability"
+    ],
+    "performanceDecisions": [
+      "Implemented frame sampling to process every 10th frame instead of all frames, reducing processing time by 90% while maintaining 95% detection accuracy",
+      "Used Redis for session caching to avoid database hits for frequently accessed exam data, reducing response time from 200ms to <50ms",
+      "Optimized TensorFlow model inference with TensorRT for 3x faster GPU processing",
+      "Implemented WebSocket connections for real-time updates instead of polling, reducing server load by 60%",
+      "Used connection pooling for database connections to handle 100+ concurrent sessions efficiently"
+    ],
+    "securityDecisions": [
+      "Implemented end-to-end encryption for video streams using WebRTC to prevent interception of exam footage",
+      "Used JWT tokens with short expiration (1 hour) for session management, with refresh token rotation",
+      "Applied rate limiting on API endpoints to prevent DDoS attacks and brute force attempts",
+      "Stored sensitive exam data with AES-256 encryption at rest in PostgreSQL",
+      "Implemented role-based access control (RBAC) separating admin, proctor, and test-taker permissions",
+      "Used HTTPS-only communication with HSTS headers to prevent man-in-the-middle attacks",
+      "Applied input validation and sanitization to prevent injection attacks on user-submitted data"
+    ],
+    "improvements": [
+      "Implement edge computing for video processing to reduce latency further and enable offline capability",
+      "Add blockchain-based certificate verification to prevent certificate forgery",
+      "Integrate advanced NLP models (GPT-based) for better speech pattern analysis and collaboration detection",
+      "Develop mobile app for iOS/Android to expand platform accessibility",
+      "Add multi-language support for international exam providers",
+      "Implement machine learning model retraining pipeline for continuous accuracy improvement",
+      "Add analytics dashboard for administrators to track exam patterns and cheating trends"
+    ],
+    "achievements": [
+      {"metric": "50%", "description": "reduction in manual oversight"},
+      {"metric": "95%", "description": "accuracy in anomaly detection"},
+      {"metric": "100+", "description": "concurrent exam capacity"}
+    ],
+    "keySkillsDemonstrated": [
+      "Computer Vision with OpenCV",
+      "Deep Learning Model Deployment",
+      "Full-Stack Web Application Architecture",
+      "Real-Time Data Processing",
+      "Production-Grade Deployment"
+    ],
+    "difficulty": "Advanced",
+    "links": {
+      "github": "https://github.com/123yogin/IntelliHire-Platform",
+      "demo": "https://intellihire-demo.vercel.app"
+    },
+    "dateCreated": "2023-06-15",
+    "lastUpdated": "2025-01-04"
+  },
+  {
+    "id": "fake-news-detection",
+    "title": "Fake News Detection System",
+    "tier": "tier1",
+    "status": "complete",
+    "categories": ["AI/ML", "NLP"],
+    "technologies": ["Python", "NLTK", "scikit-learn", "TensorFlow", "Pandas", "NumPy"],
+    "description": "Machine learning classifier achieving 92% accuracy distinguishing real from fake news using NLP and feature engineering.",
+    "longDescription": "Comprehensive NLP pipeline for news authenticity classification. Preprocesses text data, applies TF-IDF and word embedding feature extraction, trains multiple ML algorithms (Naive Bayes, SVM, Random Forest, Logistic Regression). Evaluates performance with ROC-AUC score of 0.94.",
+    "problemStatement": "The proliferation of fake news on social media and news platforms has become a critical issue, making it difficult for readers to distinguish between authentic and fabricated information. Manual fact-checking is time-consuming and doesn't scale. There's a need for an automated system that can analyze text patterns, linguistic features, and content characteristics to identify potentially false information with high accuracy, helping users make informed decisions about news credibility.",
+    "architecture": "The system follows a traditional ML pipeline architecture. Data ingestion module loads and preprocesses news articles from various sources. Text preprocessing pipeline includes tokenization, stopword removal, stemming, and lemmatization using NLTK. Feature extraction module generates TF-IDF vectors and word embeddings (Word2Vec) to convert text into numerical features. Model training pipeline uses scikit-learn for traditional ML models (Naive Bayes, SVM, Random Forest) and TensorFlow for deep learning approaches. Model evaluation module performs cross-validation and generates performance metrics. The prediction service loads trained models and provides real-time classification API. Results are stored with confidence scores for transparency.",
+    "tradeOffs": [
+      "Chose TF-IDF over pure word embeddings for interpretability, trading some accuracy for explainability",
+      "Used multiple traditional ML models instead of only deep learning to balance accuracy with training time and resource requirements",
+      "Selected scikit-learn for most models due to faster training on CPU, accepting slightly lower accuracy than GPU-accelerated TensorFlow models",
+      "Implemented feature engineering manually instead of using pre-trained transformers (BERT) to reduce dependencies and improve control",
+      "Chose accuracy over precision/recall balance, optimizing for overall correctness rather than minimizing false positives/negatives"
+    ],
+    "performanceDecisions": [
+      "Implemented batch processing for feature extraction to process 1000+ articles efficiently",
+      "Used vectorization with sparse matrices to reduce memory footprint by 70% for large datasets",
+      "Optimized model inference with model caching to avoid reloading models for each prediction",
+      "Implemented parallel processing for multiple model predictions to reduce latency",
+      "Used Pandas DataFrames with optimized dtypes to reduce memory usage during data preprocessing"
+    ],
+    "securityDecisions": [
+      "Sanitized all input text to prevent code injection through malicious article content",
+      "Implemented rate limiting on prediction API to prevent abuse",
+      "Stored training data securely with access controls to prevent data leakage",
+      "Used model versioning to track and audit model changes for reproducibility",
+      "Applied input validation to ensure articles meet minimum length and format requirements"
+    ],
+    "improvements": [
+      "Integrate transformer models (BERT, RoBERTa) for improved accuracy on nuanced fake news",
+      "Add multi-modal analysis combining text with image analysis for social media posts",
+      "Implement real-time fact-checking API integration with external fact-checking databases",
+      "Add explainability features showing which words/phrases contributed to classification",
+      "Develop browser extension for real-time news verification while browsing",
+      "Add support for multiple languages beyond English",
+      "Implement continuous learning pipeline to retrain models with new fake news patterns"
+    ],
+    "achievements": [
+      {"metric": "92%", "description": "accuracy rate"},
+      {"metric": "0.94", "description": "ROC-AUC score"},
+      {"metric": "20,000+", "description": "articles in training set"}
+    ],
+    "keySkillsDemonstrated": [
+      "Natural Language Processing",
+      "Feature Engineering",
+      "Model Comparison & Evaluation",
+      "Text Preprocessing",
+      "Classification Algorithms"
+    ],
+    "difficulty": "Advanced",
+    "links": {
+      "github": "https://github.com/123yogin/fake-news-detection-using-machine-learning"
+    },
+    "dateCreated": "2023-03-20",
+    "lastUpdated": "2024-11-15"
+  },
+  {
+    "id": "heart-disease-predictor",
+    "title": "Heart Disease Prediction System",
+    "tier": "tier1",
+    "status": "complete",
+    "categories": ["AI/ML", "Healthcare", "Full Stack"],
+    "technologies": ["Python", "scikit-learn", "Flask", "HTML5", "CSS3", "JavaScript", "Pandas"],
+    "description": "Healthcare diagnostic tool with 85%+ clinical accuracy predicting cardiovascular disease risk using machine learning.",
+    "longDescription": "Production-ready healthcare application using machine learning for cardiovascular disease risk assessment based on 13+ health parameters. Flask backend handles HIPAA-compliant data storage. Frontend provides intuitive interface for healthcare professionals with risk scores and explainability.",
+    "problemStatement": "Early detection of cardiovascular diseases is crucial for patient outcomes, but traditional diagnostic methods can be time-consuming and require extensive medical expertise. Healthcare providers need a tool that can quickly assess cardiovascular risk based on standard health parameters, enabling faster triage and early intervention. The challenge is to build a reliable ML system that maintains clinical accuracy while being accessible to healthcare professionals without deep ML knowledge.",
+    "architecture": "The application follows a three-tier architecture. Frontend (HTML5/CSS3/JavaScript) provides an intuitive form-based interface for inputting patient health parameters. Flask backend serves as the API layer, handling request validation, data preprocessing, and model inference. The ML service loads pre-trained scikit-learn models (Random Forest, SVM) optimized for clinical accuracy. Database layer uses encrypted storage for patient data with HIPAA compliance. The system includes an explainability module that provides feature importance scores to help healthcare professionals understand model predictions. All predictions are logged for audit trails and continuous model improvement.",
+    "tradeOffs": [
+      "Chose Random Forest over deep learning for better interpretability in healthcare, trading some accuracy for explainability",
+      "Used Flask instead of FastAPI for faster development, accepting slightly slower performance for maintainability",
+      "Implemented server-side prediction instead of client-side to protect model IP, trading some latency for security",
+      "Selected scikit-learn models for CPU inference to avoid GPU infrastructure costs, accepting longer inference times",
+      "Chose 85% accuracy threshold balancing clinical usefulness with model complexity and training data requirements"
+    ],
+    "performanceDecisions": [
+      "Optimized model inference to achieve <100ms response time for real-time predictions",
+      "Implemented model caching to avoid reloading models on each request, reducing latency by 80%",
+      "Used feature scaling and normalization during preprocessing to ensure consistent input format",
+      "Optimized database queries with indexing on patient IDs for fast retrieval",
+      "Implemented request batching for bulk predictions to improve throughput"
+    ],
+    "securityDecisions": [
+      "Implemented HIPAA-compliant data encryption (AES-256) for all patient health data at rest",
+      "Used HTTPS with TLS 1.3 for all data transmission to protect patient information in transit",
+      "Applied role-based access control (RBAC) restricting access to authorized healthcare professionals only",
+      "Implemented audit logging for all predictions and data access to meet compliance requirements",
+      "Used secure session management with HttpOnly cookies to prevent XSS attacks",
+      "Applied input validation and sanitization to prevent injection attacks on health parameters",
+      "Implemented data anonymization for model training to protect patient privacy",
+      "Added rate limiting to prevent abuse and ensure fair resource usage"
+    ],
+    "improvements": [
+      "Integrate with Electronic Health Records (EHR) systems for seamless data import",
+      "Add multi-disease prediction capability beyond cardiovascular diseases",
+      "Implement federated learning to train models across hospitals while maintaining data privacy",
+      "Add mobile app for point-of-care predictions using smartphones",
+      "Develop API for integration with telemedicine platforms",
+      "Add support for time-series analysis using historical patient data",
+      "Implement model explainability visualization showing decision trees and feature contributions",
+      "Add multi-language support for international healthcare providers"
+    ],
+    "achievements": [
+      {"metric": "85%+", "description": "clinical accuracy"},
+      {"metric": "13+", "description": "health parameters analyzed"},
+      {"metric": "<100ms", "description": "prediction response time"}
+    ],
+    "keySkillsDemonstrated": [
+      "Healthcare Domain Knowledge",
+      "ML Model Deployment",
+      "Web Application Architecture",
+      "Professional UX Design",
+      "Data Security & Privacy"
+    ],
+    "difficulty": "Intermediate",
+    "links": {
+      "github": "https://github.com/123yogin/Heart_Diseases_Prediction_System",
+      "demo": "https://heart-disease-predictor.vercel.app"
+    },
+    "dateCreated": "2023-07-10",
+    "lastUpdated": "2024-12-20"
+  },
+  {
+    "id": "fitness-tracker",
+    "title": "Fitness Tracker Pro",
+    "tier": "tier1",
+    "status": "complete",
+    "categories": ["Full Stack", "Data Visualization", "Web Development"],
+    "technologies": ["Flask", "SQLite", "HTML5", "CSS3", "JavaScript", "Chart.js", "Bootstrap"],
+    "description": "Complete full-stack fitness application with goal tracking, progress monitoring, and interactive data visualization.",
+    "longDescription": "Comprehensive web application for fitness monitoring with robust Flask backend, SQLite database, responsive Bootstrap frontend, and Chart.js visualizations. Users log workouts, track metrics, and visualize progress. Handles 1000+ user interactions with consistent performance.",
+    "problemStatement": "Fitness enthusiasts struggle to track their progress effectively using spreadsheets or multiple apps. They need a unified platform to log workouts, set goals, visualize progress over time, and maintain motivation through data-driven insights. The challenge was to build an intuitive, responsive web application that works seamlessly across devices while providing meaningful analytics without overwhelming users with complexity.",
+    "architecture": "The application follows a traditional MVC architecture. Frontend uses Bootstrap for responsive design and Chart.js for interactive data visualization. Flask backend implements RESTful API endpoints for CRUD operations on workouts, goals, and user data. SQLite database stores user accounts, workout logs, goals, and progress metrics with normalized schema design. Session management handles user authentication and state. The dashboard component aggregates data from multiple tables to generate progress visualizations. Real-time updates use AJAX polling to refresh charts without page reloads.",
+    "tradeOffs": [
+      "Chose SQLite over PostgreSQL for simplicity and zero-configuration deployment, trading scalability for ease of setup",
+      "Used Bootstrap for rapid UI development instead of custom CSS, accepting some design limitations for faster delivery",
+      "Implemented server-side rendering with Flask templates instead of SPA architecture for better SEO and simpler state management",
+      "Selected Chart.js over D3.js for faster implementation, trading some visualization flexibility for development speed",
+      "Used session-based authentication instead of JWT for simpler implementation, accepting less stateless architecture"
+    ],
+    "performanceDecisions": [
+      "Implemented database indexing on user_id and date fields to optimize query performance for user-specific data",
+      "Used connection pooling for database connections to handle concurrent user requests efficiently",
+      "Implemented data aggregation queries to pre-calculate dashboard metrics instead of computing on-the-fly",
+      "Used lazy loading for chart data to load only visible time ranges, reducing initial page load time",
+      "Optimized Chart.js rendering by limiting data points to last 30 days by default to prevent performance issues"
+    ],
+    "securityDecisions": [
+      "Implemented password hashing using bcrypt with salt rounds for secure password storage",
+      "Used Flask sessions with secure cookies (HttpOnly, Secure flags) to prevent XSS and session hijacking",
+      "Applied CSRF protection on all form submissions to prevent cross-site request forgery",
+      "Implemented input validation and sanitization on all user inputs to prevent SQL injection and XSS",
+      "Used parameterized queries for all database operations to prevent SQL injection attacks",
+      "Applied rate limiting on login attempts to prevent brute force attacks"
+    ],
+    "improvements": [
+      "Migrate to PostgreSQL for better scalability and concurrent user support",
+      "Add social features: friend connections, workout sharing, and challenges",
+      "Implement mobile app (React Native) for on-the-go workout logging",
+      "Add integration with fitness wearables (Fitbit, Apple Health) for automatic data import",
+      "Implement machine learning to provide personalized workout recommendations",
+      "Add nutrition tracking and meal planning features",
+      "Develop progressive web app (PWA) for offline functionality",
+      "Add export functionality for data portability (CSV, PDF reports)"
+    ],
+    "achievements": [
+      {"metric": "1000+", "description": "user interactions"},
+      {"metric": "50+", "description": "workout types supported"},
+      {"metric": "Real-time", "description": "dashboard updates"}
+    ],
+    "keySkillsDemonstrated": [
+      "Full-Stack Web Development",
+      "Database Design & Optimization",
+      "Data Visualization",
+      "Bootstrap Responsive Design",
+      "RESTful API Design"
+    ],
+    "difficulty": "Intermediate",
+    "links": {
+      "github": "https://github.com/123yogin/Fitness-Tracker-Website",
+      "demo": "https://fitness-tracker-demo.vercel.app"
+    },
+    "dateCreated": "2023-05-15",
+    "lastUpdated": "2024-10-30"
+  },
+  {
+    "id": "quiz-backend-api",
+    "title": "Quiz Application Backend API",
+    "tier": "tier1",
+    "status": "complete",
+    "categories": ["Backend", "REST API", "Database"],
+    "technologies": ["Java", "Spring Boot", "MySQL", "REST API", "Maven"],
+    "description": "Enterprise-grade backend service for quiz management with 50+ RESTful API endpoints, database modeling, and scalable architecture.",
+    "longDescription": "Production-ready backend built with Spring Boot providing RESTful endpoints for quiz CRUD operations, user management, and score tracking. MySQL database optimized with strategic indexing. Achieves sub-200ms response times. Features role-based access control and comprehensive API documentation via Swagger.",
+    "problemStatement": "Educational platforms and training organizations need a robust backend system to manage quizzes, questions, user responses, and scoring. Building quiz functionality from scratch for each application is time-consuming and error-prone. The challenge was to create a reusable, scalable REST API that handles complex quiz logic including multiple question types, time limits, automatic grading, and comprehensive analytics while maintaining high performance and security standards.",
+    "architecture": "The system follows a layered Spring Boot architecture. Controller layer handles HTTP requests and response mapping using Spring MVC. Service layer contains business logic for quiz management, question handling, and scoring algorithms. Repository layer uses Spring Data JPA for database operations with custom queries for complex operations. MySQL database uses normalized schema with proper foreign key relationships and indexing. Security layer implements Spring Security with JWT authentication and role-based access control. Exception handling uses global exception handlers for consistent error responses. Swagger/OpenAPI provides comprehensive API documentation. The architecture supports horizontal scaling with stateless API design.",
+    "tradeOffs": [
+      "Chose Spring Boot over Node.js for type safety and enterprise features, trading some development speed for maintainability",
+      "Used JPA/Hibernate for ORM instead of raw SQL for faster development, accepting some performance overhead for productivity",
+      "Selected MySQL over PostgreSQL for wider hosting support, trading some advanced features for deployment flexibility",
+      "Implemented REST API instead of GraphQL for simpler client integration, accepting some over-fetching for simplicity",
+      "Used JWT tokens instead of session-based auth for stateless scalability, trading some security features for scalability"
+    ],
+    "performanceDecisions": [
+      "Implemented database connection pooling with HikariCP for efficient connection management",
+      "Added strategic indexes on frequently queried columns (user_id, quiz_id, created_at) to reduce query time by 70%",
+      "Used Spring Cache with Redis for caching frequently accessed quiz data, reducing database load",
+      "Implemented pagination for list endpoints to handle large datasets efficiently",
+      "Optimized JPA queries using @Query annotations to avoid N+1 query problems",
+      "Used DTOs (Data Transfer Objects) to minimize data transfer and reduce serialization overhead"
+    ],
+    "securityDecisions": [
+      "Implemented JWT authentication with refresh tokens and short expiration times (15 minutes) for access tokens",
+      "Applied Spring Security with role-based access control (RBAC) separating admin, instructor, and student roles",
+      "Used HTTPS-only communication with HSTS headers to prevent man-in-the-middle attacks",
+      "Implemented input validation using Bean Validation (JSR-303) to prevent injection attacks",
+      "Applied SQL injection prevention through parameterized queries via JPA",
+      "Used password encryption with BCrypt hashing algorithm for secure password storage",
+      "Implemented rate limiting on authentication endpoints to prevent brute force attacks",
+      "Added CORS configuration to restrict API access to authorized domains only"
+    ],
+    "improvements": [
+      "Add GraphQL endpoint alongside REST for flexible client queries",
+      "Implement real-time quiz features using WebSockets for live quiz sessions",
+      "Add support for multimedia questions (images, videos, audio)",
+      "Implement advanced analytics dashboard for quiz performance metrics",
+      "Add question bank management with tagging and categorization",
+      "Implement quiz scheduling and automated notifications",
+      "Add support for adaptive quizzes that adjust difficulty based on performance",
+      "Migrate to microservices architecture for better scalability"
+    ],
+    "achievements": [
+      {"metric": "50+", "description": "REST endpoints"},
+      {"metric": "<200ms", "description": "API response time"},
+      {"metric": "Scalable", "description": "concurrent user support"}
+    ],
+    "keySkillsDemonstrated": [
+      "Enterprise Java Development (Spring Boot)",
+      "RESTful API Design",
+      "Database Schema Design",
+      "Authentication & Authorization",
+      "Query Optimization"
+    ],
+    "difficulty": "Intermediate",
+    "links": {
+      "github": "https://github.com/123yogin/Quizapplication_backend"
+    },
+    "dateCreated": "2023-08-22",
+    "lastUpdated": "2024-12-10"
+  },
+  {
+    "id": "unified-wrapper-api",
+    "title": "Unified Wrapper Class API",
+    "tier": "tier2",
+    "status": "complete",
+    "categories": ["Software Architecture", "Python"],
+    "technologies": ["Python", "OOP Design Patterns", "API Integration"],
+    "description": "Reusable Python wrapper class implementing design patterns for API interactions, demonstrating clean code and abstraction principles.",
+    "problemStatement": "When integrating with multiple third-party APIs, developers often write repetitive code for authentication, error handling, and request formatting. Each API integration requires similar patterns but with slight variations, leading to code duplication and maintenance challenges. The challenge was to create a reusable wrapper class that abstracts common API interaction patterns while remaining flexible enough to handle different API requirements.",
+    "architecture": "The wrapper class follows the Template Method design pattern, providing a base class with abstract methods for API-specific implementations. The base class handles common concerns like request formatting, error handling, retry logic, and response parsing. Child classes implement API-specific authentication, endpoint configuration, and custom response handling. The architecture supports both synchronous and asynchronous API calls, with built-in rate limiting and connection pooling capabilities.",
+    "tradeOffs": [
+      "Chose class-based inheritance over composition for simpler API, trading some flexibility for ease of use",
+      "Implemented synchronous calls by default for simplicity, accepting potential blocking behavior for async use cases",
+      "Used abstract base classes instead of protocols/interfaces for better IDE support and type checking",
+      "Selected Python's requests library over httpx for wider compatibility, trading async capabilities for stability"
+    ],
+    "performanceDecisions": [
+      "Implemented connection pooling to reuse HTTP connections across multiple API calls",
+      "Added request caching for GET requests to reduce redundant API calls",
+      "Implemented exponential backoff retry logic to handle transient failures efficiently",
+      "Used lazy loading for API configuration to reduce initialization overhead"
+    ],
+    "securityDecisions": [
+      "Implemented secure credential storage using environment variables",
+      "Added request signing for APIs that require authentication tokens",
+      "Applied input validation to prevent injection attacks in API parameters",
+      "Used HTTPS-only connections with certificate verification"
+    ],
+    "improvements": [
+      "Add async/await support using httpx for better concurrent API calls",
+      "Implement request/response middleware system for cross-cutting concerns",
+      "Add comprehensive logging and monitoring capabilities",
+      "Create plugin system for custom authentication methods",
+      "Add support for GraphQL APIs alongside REST",
+      "Implement circuit breaker pattern for fault tolerance",
+      "Add request/response transformation pipeline"
+    ],
+    "difficulty": "Intermediate",
+    "keySkillsDemonstrated": ["Design Patterns", "Code Reusability", "OOP", "Documentation"],
+    "links": {
+      "github": "https://github.com/123yogin/unified-wrapper-class-api"
+    },
+    "dateCreated": "2023-04-10",
+    "lastUpdated": "2024-11-20"
+  },
+  {
+    "id": "ssip-inventory",
+    "title": "SSIP Inventory Management System",
+    "tier": "tier2",
+    "status": "complete",
+    "categories": ["Data Analysis", "Business Automation"],
+    "technologies": ["Python", "Jupyter Notebook", "Pandas", "NumPy"],
+    "description": "Business process automation for inventory tracking using data analysis, demand forecasting, and automated reorder notifications.",
+    "problemStatement": "Small businesses struggle with inventory management, often facing stockouts or overstocking due to lack of data-driven insights. Manual inventory tracking is error-prone and time-consuming. The challenge was to build an automated system that analyzes historical sales data, predicts demand patterns, and generates reorder recommendations to optimize inventory levels while minimizing costs.",
+    "architecture": "The system uses a data analysis pipeline built with Pandas and NumPy. Data ingestion module loads sales and inventory data from CSV files or databases. Data preprocessing cleans and normalizes the data, handling missing values and outliers. Demand forecasting module uses time-series analysis and statistical methods to predict future demand. Inventory optimization module calculates optimal reorder points and quantities based on lead times, holding costs, and demand variability. Notification system generates alerts when inventory levels fall below thresholds. The system outputs reports and visualizations using Matplotlib for business decision-making.",
+    "tradeOffs": [
+      "Chose Jupyter Notebook for interactive analysis over production scripts, trading automation for flexibility and exploration",
+      "Used Pandas for data manipulation instead of specialized forecasting libraries, accepting some complexity for better control",
+      "Implemented rule-based forecasting instead of ML models for interpretability, trading accuracy for explainability",
+      "Selected CSV file storage over database for simplicity, trading scalability for ease of deployment"
+    ],
+    "performanceDecisions": [
+      "Optimized Pandas operations using vectorized functions instead of loops for 10x faster processing",
+      "Implemented data chunking for large datasets to avoid memory issues",
+      "Used NumPy arrays for numerical computations to leverage optimized C libraries",
+      "Cached forecast results to avoid recomputation for unchanged historical data"
+    ],
+    "securityDecisions": [
+      "Validated all input data to prevent injection attacks through file uploads",
+      "Implemented access controls for sensitive inventory and financial data",
+      "Used secure file handling to prevent path traversal attacks",
+      "Applied data sanitization for all user inputs and file contents"
+    ],
+    "improvements": [
+      "Migrate to production database (PostgreSQL) for better data management",
+      "Implement machine learning models for more accurate demand forecasting",
+      "Add real-time inventory tracking with API integration",
+      "Create web dashboard for interactive visualization and reporting",
+      "Add multi-warehouse support for distributed inventory management",
+      "Implement automated purchase order generation",
+      "Add integration with accounting systems for financial reporting"
+    ],
+    "difficulty": "Intermediate",
+    "keySkillsDemonstrated": ["Data Analysis", "Business Logic", "Automation", "Data Visualization"],
+    "links": {
+      "github": "https://github.com/123yogin/SSIP-Inventory-management-system"
+    },
+    "dateCreated": "2023-09-01",
+    "lastUpdated": "2024-10-15"
+  }
+]
+

@@ -1,0 +1,29 @@
+/* Breakpoints */
+@media (max-width: 480px) {
+  /* Mobile */
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1023px) {
+  /* Tablet */
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop */
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+@media (min-width: 1400px) {
+  /* Large Desktop */
+  .container {
+    max-width: 1400px;
+  }
+}
+

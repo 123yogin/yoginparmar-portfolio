@@ -1,0 +1,30 @@
+.App {
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  position: relative;
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section transitions */
+section {
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+/* Add subtle parallax effect */
+@media (prefers-reduced-motion: no-preference) {
+  section {
+    will-change: transform;
+  }
+}

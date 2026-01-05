@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "name": "Core Languages",
+      "skills": [
+        {"name": "Python", "level": "Expert", "proficiency": 100},
+        {"name": "JavaScript", "level": "Advanced", "proficiency": 85},
+        {"name": "Java", "level": "Proficient", "proficiency": 70},
+        {"name": "SQL", "level": "Advanced", "proficiency": 85}
+      ]
+    },
+    {
+      "name": "Frontend Development",
+      "skills": [
+        {"name": "React", "level": "Advanced", "proficiency": 85},
+        {"name": "React Native", "level": "Intermediate", "proficiency": 60},
+        {"name": "Flutter", "level": "Beginner", "proficiency": 40},
+        {"name": "HTML5/CSS3", "level": "Expert", "proficiency": 100},
+        {"name": "Bootstrap", "level": "Advanced", "proficiency": 85}
+      ]
+    },
+    {
+      "name": "Backend & APIs",
+      "skills": [
+        {"name": "Flask", "level": "Advanced", "proficiency": 85},
+        {"name": "Node.js", "level": "Intermediate", "proficiency": 60},
+        {"name": "Spring Boot", "level": "Intermediate", "proficiency": 60},
+        {"name": "REST APIs", "level": "Advanced", "proficiency": 85}
+      ]
+    },
+    {
+      "name": "AI/ML & Data Science",
+      "skills": [
+        {"name": "TensorFlow", "level": "Intermediate", "proficiency": 60},
+        {"name": "scikit-learn", "level": "Advanced", "proficiency": 85},
+        {"name": "Pandas", "level": "Advanced", "proficiency": 85},
+        {"name": "NumPy", "level": "Intermediate", "proficiency": 60},
+        {"name": "OpenCV", "level": "Intermediate", "proficiency": 60}
+      ]
+    },
+    {
+      "name": "DevOps & Tools",
+      "skills": [
+        {"name": "Git", "level": "Expert", "proficiency": 100},
+        {"name": "Vercel", "level": "Advanced", "proficiency": 85},
+        {"name": "Docker", "level": "Beginner", "proficiency": 40},
+        {"name": "CI/CD", "level": "Intermediate", "proficiency": 60}
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,22 @@
+{
+  "name": "Yogin Parmar - Junior AI Developer Portfolio",
+  "short_name": "Yogin Parmar",
+  "description": "Portfolio of Yogin Parmar - Junior AI Developer specializing in AI agents, full-stack development, and ML engineering",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e27",
+  "theme_color": "#00d9ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
+

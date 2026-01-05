@@ -1,0 +1,55 @@
+[
+  {
+    "id": "current-role",
+    "type": "work",
+    "title": "Junior AI Developer",
+    "company": "The Line Tech Solutions Limited",
+    "duration": "August 2025 - Present",
+    "location": "Ahmedabad, Gujarat, India",
+    "mentor": "Poonam Pratik Patel",
+    "status": "Currently Active",
+    "description": "Develop web and mobile applications with AI agent integration. Create intelligent workflows for automated development. Coordinate deployment across platforms. Contribute to AI-enabled solutions using Python, React, and AI agent frameworks.",
+    "achievements": [
+      "Successfully integrated multiple AI agents (Cursor, Windsurf, Claude) into production workflows",
+      "Developed intelligent automation systems reducing manual development time by 40%",
+      "Led deployment coordination across multiple platforms ensuring zero-downtime releases"
+    ],
+    "responsibilities": [
+      "Building AI-driven applications with production focus",
+      "Integrating Cursor, Windsurf, and Claude AI agents",
+      "Developing intelligent automation workflows",
+      "Coordinating platform deployments",
+      "Contributing to full-stack development"
+    ],
+    "skills": ["Python", "React", "AI Agents", "Flask", "Automation", "Deployment", "Git", "JavaScript"],
+    "relatedProjects": ["IntelliHire Platform"]
+  },
+  {
+    "id": "education",
+    "type": "education",
+    "title": "Bachelor of Engineering in Computer Engineering",
+    "company": "LDRP Institute of Technology & Research, GTU",
+    "duration": "September 2022 - April 2026",
+    "location": "Gandhinagar, Gujarat",
+    "status": "Currently Enrolled (Graduation: April 2026)",
+    "description": "Pursuing comprehensive computer engineering degree with focus on AI/ML, web development, and software engineering. Building strong foundation in both theoretical concepts and practical implementation.",
+    "achievements": [
+      "Maintained strong academic performance while building 37+ GitHub projects",
+      "Applied coursework knowledge to real-world projects and applications",
+      "Developed expertise in AI/ML through hands-on project implementation"
+    ],
+    "coursework": [
+      "Data Structures & Algorithms",
+      "Web Development & Full-Stack Engineering",
+      "AI/ML Fundamentals & Applications",
+      "Database Management Systems",
+      "Software Engineering & Design Patterns",
+      "Cloud Computing & Distributed Systems",
+      "Computer Networks",
+      "Operating Systems"
+    ],
+    "skills": ["Data Structures", "Algorithms", "Web Development", "AI/ML", "Database Design", "Software Engineering"],
+    "relatedProjects": ["Fitness Tracker", "Heart Disease Prediction"]
+  }
+]
+
