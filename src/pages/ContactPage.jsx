@@ -8,9 +8,9 @@ const ContactPage = () => {
   return (
     <div className="App">
       <Helmet>
-        <title>Contact Me | Yogin Parmar - AI Developer & Full Stack Engineer</title>
+        <title>Contact Me | Yogin Parmar - Backend Engineer</title>
         <meta name="description" content="Get in touch with Yogin Parmar for AI/ML projects, full-stack development opportunities, collaborations, or inquiries. Based in Gandhinagar, Gujarat, India." />
-        <meta name="keywords" content="Contact, Get in Touch, Hire AI Developer, Collaboration, Yogin Parmar, Email, LinkedIn, GitHub" />
+        <meta name="keywords" content="Contact, Get in Touch, Hire Software Developer, Collaboration, Yogin Parmar, Email, LinkedIn, GitHub" />
         <link rel="canonical" href="https://yoginparmar.dev/contact" />
       </Helmet>
       <Background />

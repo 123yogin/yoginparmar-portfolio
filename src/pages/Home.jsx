@@ -8,9 +8,9 @@ const Home = () => {
   return (
     <div className="App">
       <Helmet>
-        <title>Yogin Parmar - AI Developer & Full Stack Developer</title>
-        <meta name="description" content="Junior AI Developer specializing in AI agents, full-stack development, and ML engineering. 37+ projects including IntelliHire Platform, Fake News Detection System, and healthcare ML systems. Based in Gandhinagar, Gujarat, India." />
-        <meta name="keywords" content="AI Developer, Full Stack Developer, Machine Learning Engineer, Python Developer, React Developer, Flask Developer, AI Agents, Computer Vision, NLP, Healthcare AI, Portfolio, Yogin Parmar, Gandhinagar, Gujarat, India" />
+        <title>Yogin Parmar - Backend Engineer</title>
+        <meta name="description" content="Software Developer working across Java/Spring Boot, Python/Flask, and React. 37+ projects including IntelliHire Platform, Fake News Detection System, and healthcare ML systems. Based in Gandhinagar, Gujarat, India." />
+        <meta name="keywords" content="Software Developer, Full Stack Developer, Java Developer, Python Developer, React Developer, Flask Developer, AI Agents, Computer Vision, NLP, Healthcare AI, Portfolio, Yogin Parmar, Gandhinagar, Gujarat, India" />
         <link rel="canonical" href="https://yoginparmar.dev" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -19,7 +19,7 @@ const Home = () => {
             "mainEntity": {
               "@type": "Person",
               "name": "Yogin Parmar",
-              "jobTitle": "AI Developer & Full Stack Developer",
+              "jobTitle": "Software Developer",
               "url": "https://yoginparmar.dev",
               "image": "https://yoginparmar.dev/og-image.png",
               "sameAs": [

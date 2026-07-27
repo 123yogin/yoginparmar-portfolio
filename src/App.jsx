@@ -1,28 +1,28 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import PortfolioV2 from './pages/v2/PortfolioV2';
+import BlogIndex from './pages/v2/BlogIndex';
+import BlogArticle from './pages/v2/BlogArticle';
 import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
 import SkillsPage from './pages/SkillsPage';
 import ExperiencePage from './pages/ExperiencePage';
 import ContactPage from './pages/ContactPage';
 import ProjectDetail from './pages/ProjectDetail';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<PortfolioV2 />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/:slug" element={<BlogArticle />} />
       </Routes>
     </Router>
   );

@@ -8,9 +8,9 @@ const ExperiencePage = () => {
   return (
     <div className="App">
       <Helmet>
-        <title>Professional Experience | Yogin Parmar - AI Developer & Full Stack Engineer</title>
-        <meta name="description" content="Professional journey and work experience of Yogin Parmar, including roles at The Line Tech Solutions Limited and various AI/ML and full-stack development projects." />
-        <meta name="keywords" content="Experience, Work History, Professional Journey, Career, AI Developer Experience, Full Stack Developer Experience, Yogin Parmar" />
+        <title>Professional Experience | Yogin Parmar - Backend Engineer</title>
+        <meta name="description" content="Professional journey of Yogin Parmar — Associate Software Engineer at UpVision Software Services, with prior internships at The Line Tech Solutions and iTechBrains." />
+        <meta name="keywords" content="Experience, Work History, Professional Journey, Career, Backend Engineer Experience, DevOps Experience, Yogin Parmar" />
         <link rel="canonical" href="https://yoginparmar.dev/experience" />
       </Helmet>
       <Background />
