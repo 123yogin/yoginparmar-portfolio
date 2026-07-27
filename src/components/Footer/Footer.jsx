@@ -36,10 +36,10 @@ const Footer = () => {
           <div className="footer-section footer-about">
             <h3 className="footer-title">Yogin Parmar</h3>
             <p className="footer-description">
-              Junior AI Developer building intelligent applications with AI agents, 
-              full-stack development, and machine learning.
+              Backend engineer with DevOps focus — Java, Spring Boot, microservices,
+              CI/CD, Docker, AWS/OCI.
             </p>
-            <p className="footer-location">📍 Gandhinagar, Gujarat, India</p>
+            <p className="footer-location">📍 Ahmedabad, Gujarat, India</p>
           </div>
           
           <div className="footer-section footer-links-section">

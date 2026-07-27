@@ -8,9 +8,9 @@ const AboutPage = () => {
   return (
     <div className="App">
       <Helmet>
-        <title>About Me | Yogin Parmar - AI Developer & Full Stack Engineer</title>
-        <meta name="description" content="Learn about Yogin Parmar, a Junior AI Developer and Full Stack Engineer based in Gandhinagar, Gujarat. Specializing in AI agents, machine learning, and full-stack development." />
-        <meta name="keywords" content="About Yogin Parmar, AI Developer, Full Stack Developer, Machine Learning Engineer, Portfolio, Gandhinagar, Gujarat" />
+        <title>About Me | Yogin Parmar - Backend Engineer</title>
+        <meta name="description" content="Learn about Yogin Parmar, a Software Developer based in Gandhinagar, Gujarat. Working across Java/Spring Boot, Python/Flask, and React." />
+        <meta name="keywords" content="About Yogin Parmar, Software Developer, Full Stack Developer, Java Developer, Portfolio, Gandhinagar, Gujarat" />
         <link rel="canonical" href="https://yoginparmar.dev/about" />
       </Helmet>
       <Background />

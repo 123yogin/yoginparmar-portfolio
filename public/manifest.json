@@ -1,11 +1,11 @@
 {
-  "name": "Yogin Parmar - Junior AI Developer Portfolio",
+  "name": "Yogin Parmar - Backend Engineer Portfolio",
   "short_name": "Yogin Parmar",
-  "description": "Portfolio of Yogin Parmar - Junior AI Developer specializing in AI agents, full-stack development, and ML engineering",
+  "description": "Portfolio of Yogin Parmar - Backend engineer with DevOps focus: Java, Spring Boot, microservices, CI/CD, Docker, AWS/OCI",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0e27",
-  "theme_color": "#00d9ff",
+  "background_color": "#f3f2f2",
+  "theme_color": "#ec3013",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -15,8 +15,11 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["portfolio", "developer", "technology"],
+  "categories": [
+    "portfolio",
+    "developer",
+    "technology"
+  ],
   "lang": "en-US",
   "dir": "ltr"
 }
-

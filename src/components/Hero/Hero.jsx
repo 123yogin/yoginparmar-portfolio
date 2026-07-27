@@ -33,7 +33,7 @@ const Hero = () => {
   return (
     <section id="home" className="hero" itemScope itemType="https://schema.org/Person">
       <meta itemProp="name" content="Yogin Parmar" />
-      <meta itemProp="jobTitle" content="Junior AI Developer" />
+      <meta itemProp="jobTitle" content="Associate Software Engineer" />
       <div className="hero-tech-pattern" aria-hidden="true"></div>
       <div className="hero-shapes" aria-hidden="true">
         <div className="hero-shape hero-shape-1"></div>

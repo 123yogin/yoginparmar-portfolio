@@ -8,7 +8,7 @@ const ProjectsPage = () => {
   return (
     <div className="App">
       <Helmet>
-        <title>Projects | Yogin Parmar - AI Developer & Full Stack Engineer</title>
+        <title>Projects | Yogin Parmar - Backend Engineer</title>
         <meta name="description" content="Explore 37+ innovative projects by Yogin Parmar including IntelliHire Platform, Fake News Detection System, healthcare ML systems, and more AI/ML and full-stack applications." />
         <meta name="keywords" content="Projects, Portfolio, AI Projects, Machine Learning Projects, Full Stack Projects, Web Development, Yogin Parmar" />
         <link rel="canonical" href="https://yoginparmar.dev/projects" />

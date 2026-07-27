@@ -32,7 +32,7 @@ const About = () => {
             <div className="about-image-wrapper">
               <img 
                 src={profileImage} 
-                alt="Yogin Parmar - Junior AI Developer and Full Stack Engineer based in Gandhinagar, Gujarat, India. Specializing in AI agents, machine learning, and full-stack development." 
+                alt="Yogin Parmar - Backend engineer with DevOps focus, based in Ahmedabad, Gujarat, India."
                 className="about-profile-image"
                 loading="lazy"
                 width="400"
@@ -46,16 +46,17 @@ const About = () => {
           <div className="about-text">
             <div className="about-bio">
               <p>
-                I'm a Junior AI Developer at The Line Tech Solutions Limited, where I develop web and mobile applications 
-                with AI agent integration. I create intelligent workflows for automated development and coordinate 
-                deployment across platforms.
+                I'm an Associate Software Engineer at UpVision Software Services, working across backend and
+                DevOps: building REST APIs and microservices in Java and Spring Boot, then automating how they
+                get tested, containerised and deployed with CI/CD pipelines, Docker and AWS/OCI.
               </p>
               <p>
-                Currently pursuing my Bachelor of Engineering in Computer Engineering at LDRP Institute of Technology & Research, 
-                with an expected graduation in April 2026. My focus areas include AI agents, automation, and full-stack development.
+                Before UpVision I got here the hands-on way — an AI development internship at The Line Tech
+                Solutions and a Python/Django backend internship at iTechBrains. I'm finishing my Bachelor of
+                Engineering in Computer Engineering at LDRP Institute of Technology & Research, class of 2026.
               </p>
               <p>
-                Based in Gandhinagar, Gujarat, I'm passionate about problem-solving with technology and building 
+                Based in Ahmedabad, Gujarat, I'm passionate about problem-solving with technology and building 
                 production-ready applications that make a real impact.
               </p>
             </div>

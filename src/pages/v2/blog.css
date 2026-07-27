@@ -1,0 +1,608 @@
+/* Blog index + article, in the same modernist system as the home page.
+   Everything is scoped under .pv2 so tokens come from portfolio-v2.css. */
+
+.pv2-blog-main {
+  padding-top: 96px;
+}
+
+/* ══ masthead (shared by index and article) ══ */
+.pv2-blog-masthead {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 40px;
+  margin-bottom: 0;
+}
+
+.pv2-blog-masthead h1 {
+  font-size: clamp(40px, 5.6vw, 84px);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  margin: 16px 0 0;
+  max-width: 18ch;
+}
+
+.pv2-blog-lede {
+  margin: 24px 0 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--body);
+  max-width: 58ch;
+}
+
+/* ══ index rows ══ */
+.pv2-post-row {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) 200px 40px;
+  gap: 32px;
+  align-items: start;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line-25);
+  color: var(--ink);
+  transition: background 0.2s ease-out, padding-left 0.2s ease-out;
+}
+
+.pv2-post-row:hover {
+  color: var(--ink);
+  background: var(--surface);
+  padding-left: 16px;
+}
+
+.pv2-post-num {
+  font: 800 30px/1 var(--font);
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  font-feature-settings: 'tnum';
+  transition: transform 0.18s ease-out;
+}
+
+.pv2-post-row:hover .pv2-post-num {
+  transform: translateX(8px);
+}
+
+.pv2-post-title {
+  display: block;
+  font: 800 clamp(22px, 2.2vw, 32px)/1.1 var(--font);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.pv2-post-excerpt {
+  display: block;
+  margin-top: 12px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.pv2-post-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.pv2-post-category {
+  font: 800 11px/1.3 var(--font);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+.pv2-post-meta {
+  font: 600 11px/1.6 var(--font);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-feature-settings: 'tnum';
+}
+
+.pv2-post-arrow {
+  font-size: 18px;
+  color: var(--accent-dark);
+  text-align: right;
+  padding-top: 4px;
+}
+
+.pv2-blog-outro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 32px 0 0;
+}
+
+.pv2-blog-outro span {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* ══ article ══ */
+.pv2-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 600 12px/1 var(--font);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 40px;
+  transition: gap 0.18s ease-out;
+}
+
+.pv2-back:hover {
+  color: var(--accent-dark);
+  gap: 16px;
+}
+
+.pv2-article-header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 36px;
+}
+
+.pv2-article-kicker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font: 800 12px/1 var(--font);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+.pv2-article-kicker .sep {
+  color: var(--line-40);
+}
+
+.pv2-article-kicker .meta {
+  font-weight: 600;
+  color: var(--muted);
+  font-feature-settings: 'tnum';
+}
+
+.pv2-article-header h1 {
+  font-size: clamp(32px, 4.4vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 20px 0 0;
+  max-width: 20ch;
+}
+
+.pv2-article-excerpt {
+  margin: 24px 0 0;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--body);
+  max-width: 62ch;
+}
+
+.pv2-article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 26px;
+}
+
+/* Centered article shell. Its width is exactly text + gap + rail, so the back
+   link, header, body, rail, footer and read-next all share one left and right
+   edge — no column trailing off into dead space. */
+.pv2-article-shell {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* no align-items:start — the rail item must stretch to the row's full height
+   or position:sticky inside it has no distance to travel */
+.pv2-article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 64px;
+}
+
+.pv2-article-body {
+  padding: 44px 0 0;
+}
+
+.pv2-article-hero {
+  margin: 0 0 36px;
+  border: 1px solid var(--line-25);
+}
+
+.pv2-article-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── article typography ── */
+.pv2-md-p {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--body);
+}
+
+.pv2-md-h1,
+.pv2-md-h2 {
+  font: 800 clamp(24px, 2.5vw, 34px)/1.15 var(--font);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 52px 0 18px;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
+  scroll-margin-top: 104px; /* clears the sticky nav on anchor jumps */
+}
+
+.pv2-md-h3 {
+  font: 800 21px/1.25 var(--font);
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 36px 0 14px;
+  scroll-margin-top: 104px;
+}
+
+.pv2-md-h4 {
+  font: 800 13px/1.4 var(--font);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin: 30px 0 12px;
+}
+
+.pv2-article-body > *:first-child {
+  margin-top: 0;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.pv2-md-ul,
+.pv2-md-ol {
+  margin: 0 0 22px;
+  padding-left: 22px;
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--body);
+}
+
+.pv2-md-ul li,
+.pv2-md-ol li {
+  margin-bottom: 9px;
+  padding-left: 4px;
+}
+
+.pv2-md-ul li::marker {
+  color: var(--accent);
+}
+
+.pv2-md-ol li::marker {
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-family: var(--font);
+}
+
+.pv2-md-p strong,
+.pv2-md-ul strong,
+.pv2-md-ol strong {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pv2-md-code {
+  font: 500 0.88em/1.4 var(--mono);
+  background: var(--accent-100, #fff2ef);
+  border: 1px solid rgba(236, 48, 19, 0.22);
+  color: var(--accent-dark);
+  padding: 1px 5px;
+  white-space: nowrap;
+}
+
+.pv2-md-pre {
+  position: relative;
+  margin: 0 0 26px;
+  padding: 20px 22px;
+  background: var(--ink);
+  overflow-x: auto;
+  font: 13px/1.7 var(--mono);
+  color: #f3f2f2;
+}
+
+.pv2-md-pre code {
+  font: inherit;
+  color: inherit;
+  white-space: pre;
+}
+
+.pv2-md-pre[data-lang]::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 10px;
+  background: var(--accent);
+  color: #fff;
+  font: 700 9.5px/1 var(--font);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pv2-md-figure {
+  margin: 0 0 28px;
+}
+
+.pv2-md-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line-25);
+}
+
+.pv2-md-figure figcaption {
+  margin-top: 10px;
+  font: 600 11px/1.5 var(--font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pv2-md-hr {
+  height: 0;
+  border: 0;
+  border-top: 1px solid var(--line-25);
+  margin: 36px 0;
+}
+
+.pv2-article-body a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* ── sticky detail rail ── */
+.pv2-rail {
+  padding-top: 44px;
+}
+
+.pv2-rail-sticky {
+  position: sticky;
+  top: 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  border-top: 2px solid var(--ink);
+  padding-top: 18px;
+}
+
+.pv2-rail-label {
+  font: 800 10px/1 var(--font);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.pv2-rail-value {
+  font: 800 15px/1.3 var(--font);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.pv2-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: toc;
+}
+
+.pv2-toc li {
+  counter-increment: toc;
+  border-top: 1px solid var(--line-15);
+}
+
+.pv2-toc li:first-child {
+  border-top: 0;
+}
+
+.pv2-toc a {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 4px;
+  padding: 9px 0;
+  font: 600 13px/1.4 var(--font);
+  color: var(--muted);
+  transition: color 0.18s ease-out, padding-left 0.18s ease-out;
+}
+
+.pv2-toc a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-feature-settings: 'tnum';
+  color: var(--faint);
+  font-size: 11px;
+}
+
+.pv2-toc a:hover {
+  color: var(--ink);
+  padding-left: 6px;
+}
+
+.pv2-toc a.is-active {
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+
+.pv2-toc a.is-active::before {
+  color: var(--accent);
+}
+
+/* ── article footer ── */
+.pv2-article-footer {
+  margin-top: 56px;
+  padding-top: 26px;
+  border-top: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pv2-article-author {
+  font: 600 12px/1.5 var(--font);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pv2-article-author strong {
+  color: var(--ink);
+}
+
+.pv2-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  padding: 12px 18px;
+  font: 600 12px/1 var(--font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.pv2-share:hover {
+  background: var(--surface);
+}
+
+.pv2-share.is-copied {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+/* ── next/prev ── */
+.pv2-article-next {
+  margin-top: 64px;
+  border-top: 2px solid var(--ink);
+}
+
+.pv2-next-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line-25);
+  color: var(--ink);
+  transition: padding-left 0.2s ease-out;
+}
+
+.pv2-next-row:hover {
+  color: var(--ink);
+  padding-left: 16px;
+}
+
+.pv2-next-label {
+  font: 600 11px/1 var(--font);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex: none;
+}
+
+.pv2-next-title {
+  font: 800 clamp(18px, 1.7vw, 24px)/1.25 var(--font);
+  letter-spacing: -0.015em;
+  flex: 1;
+  min-width: 260px;
+}
+
+/* ══ not found ══ */
+/* padding-block only — the shorthand would clobber .pv2-side's gutters */
+.pv2-notfound {
+  padding-top: 140px;
+  padding-bottom: 120px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.pv2-notfound h1 {
+  font-size: clamp(38px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.pv2-notfound p {
+  margin: 22px 0 32px;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 48ch;
+}
+
+/* ══ responsive ══ */
+@media (max-width: 1039px) {
+  .pv2-post-row {
+    grid-template-columns: 64px minmax(0, 1fr) 160px;
+  }
+
+  .pv2-post-arrow {
+    display: none;
+  }
+
+  /* the contents rail is a desktop affordance — below this the article is a
+     single column and the footer still carries the share action */
+  .pv2-article-shell {
+    max-width: 100%;
+  }
+
+  .pv2-article-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .pv2-rail {
+    display: none;
+  }
+}
+
+@media (max-width: 719px) {
+  .pv2-blog-main {
+    padding-top: 72px;
+  }
+
+  .pv2-post-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 26px 0;
+  }
+
+  .pv2-post-num {
+    font-size: 22px;
+  }
+
+  .pv2-post-side {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .pv2-article-body,
+  .pv2-article-footer {
+    max-width: 100%;
+  }
+
+  .pv2-md-p,
+  .pv2-md-ul,
+  .pv2-md-ol {
+    font-size: 16px;
+  }
+
+  .pv2-md-pre {
+    padding: 16px;
+    font-size: 12px;
+  }
+}

@@ -11,7 +11,7 @@ const Blog = () => {
   return (
     <div className="App">
       <Helmet>
-        <title>Technical Blog & Case Studies | Yogin Parmar - AI Developer Portfolio</title>
+        <title>Technical Blog & Case Studies | Yogin Parmar - Backend Engineer Portfolio</title>
         <meta name="description" content="Deep-dive technical articles on backend development, database design, AI/ML, and production-grade architecture decisions. Learn from real-world implementations and best practices." />
         <meta name="keywords" content="Technical Blog, Backend Development, Database Design, AI/ML, FastAPI, PostgreSQL, Python, Architecture, Case Studies, Yogin Parmar" />
         <meta property="og:title" content="Technical Blog & Case Studies | Yogin Parmar" />

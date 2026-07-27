@@ -2,54 +2,127 @@
   {
     "id": "current-role",
     "type": "work",
-    "title": "Junior AI Developer",
-    "company": "The Line Tech Solutions Limited",
-    "duration": "August 2025 - Present",
+    "title": "Associate Software Engineer",
+    "company": "UpVision Software Services Private Limited",
+    "duration": "2026 - Present",
     "location": "Ahmedabad, Gujarat, India",
-    "mentor": "Poonam Pratik Patel",
     "status": "Currently Active",
-    "description": "Develop web and mobile applications with AI agent integration. Create intelligent workflows for automated development. Coordinate deployment across platforms. Contribute to AI-enabled solutions using Python, React, and AI agent frameworks.",
+    "description": "Backend and DevOps across the stack: building REST APIs and microservices in Java and Spring Boot, then automating how they get tested, containerised and deployed with CI/CD pipelines, Docker, and cloud platforms (AWS/OCI).",
     "achievements": [
-      "Successfully integrated multiple AI agents (Cursor, Windsurf, Claude) into production workflows",
-      "Developed intelligent automation systems reducing manual development time by 40%",
-      "Led deployment coordination across multiple platforms ensuring zero-downtime releases"
+      "CI/CD pipelines that test, containerise and deploy every change",
+      "Cloud deployments on AWS and OCI"
     ],
     "responsibilities": [
-      "Building AI-driven applications with production focus",
-      "Integrating Cursor, Windsurf, and Claude AI agents",
-      "Developing intelligent automation workflows",
-      "Coordinating platform deployments",
-      "Contributing to full-stack development"
+      "Backend development in Java and Spring Boot",
+      "Designing and maintaining REST APIs and microservices",
+      "Automating test, build and deployment pipelines",
+      "Containerising services with Docker",
+      "Deploying and operating services on AWS/OCI"
     ],
-    "skills": ["Python", "React", "AI Agents", "Flask", "Automation", "Deployment", "Git", "JavaScript"],
-    "relatedProjects": ["IntelliHire Platform"]
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "Microservices",
+      "CI/CD",
+      "Docker",
+      "AWS/OCI",
+      "SQL",
+      "Git"
+    ],
+    "relatedProjects": [
+      "RestroSuite - Restaurant POS System",
+      "Bank Application with REST APIs"
+    ]
+  },
+  {
+    "id": "theline-internship",
+    "type": "work",
+    "title": "Jr. AI Developer (Internship)",
+    "company": "The Line Tech Solutions Limited",
+    "duration": "August 2025 - 2026",
+    "location": "Ahmedabad, Gujarat, India",
+    "mentor": "Poonam Pratik Patel",
+    "status": "Completed",
+    "description": "AI development internship — Python, AI-assisted workflows, and web & mobile application integration on real projects, in a collaborative development environment.",
+    "achievements": [
+      "Python services and AI-assisted development workflows",
+      "Web and mobile application integration on real projects",
+      "First production codebase, in a collaborative team environment"
+    ],
+    "responsibilities": [
+      "Backend development and integration tasks",
+      "Building Flask REST APIs",
+      "Supporting web and mobile applications"
+    ],
+    "skills": [
+      "Python",
+      "Flask",
+      "AI workflows",
+      "Mobile Applications",
+      "Git"
+    ],
+    "relatedProjects": []
+  },
+  {
+    "id": "itechbrains-internship",
+    "type": "work",
+    "title": "Python / Django Intern",
+    "company": "iTechBrains",
+    "duration": "May 2025 - June 2025",
+    "location": "Gujarat, India",
+    "mentor": "Nishant Kansagara",
+    "status": "Completed",
+    "description": "A 30-day backend internship working on real-world projects with Python and Django — taking classroom concepts to shipped code under expert guidance.",
+    "achievements": [
+      "Real-world back-end projects in Python + Django",
+      "Sharpened backend development skills under mentorship"
+    ],
+    "responsibilities": [
+      "Django backend development on client projects",
+      "Applying academic knowledge to production code"
+    ],
+    "skills": [
+      "Python",
+      "Django",
+      "Backend Development"
+    ],
+    "relatedProjects": []
   },
   {
     "id": "education",
     "type": "education",
     "title": "Bachelor of Engineering in Computer Engineering",
     "company": "LDRP Institute of Technology & Research, GTU",
-    "duration": "September 2022 - April 2026",
+    "duration": "2022 - 2026",
     "location": "Gandhinagar, Gujarat",
-    "status": "Currently Enrolled (Graduation: April 2026)",
-    "description": "Pursuing comprehensive computer engineering degree with focus on AI/ML, web development, and software engineering. Building strong foundation in both theoretical concepts and practical implementation.",
+    "status": "Currently Enrolled (Class of 2026)",
+    "description": "Pursuing a computer engineering degree with a solid grounding in database systems, data structures, and object-oriented programming — applied in parallel across 43 public GitHub repositories.",
     "achievements": [
-      "Maintained strong academic performance while building 37+ GitHub projects",
-      "Applied coursework knowledge to real-world projects and applications",
-      "Developed expertise in AI/ML through hands-on project implementation"
+      "Built 43 public GitHub repositories while studying full-time",
+      "Certified: Programming in Java (NPTEL), Android development (1Stop), soft skills (NPTEL)",
+      "Completed JPMC Midas and Deloitte Technology job simulations (Forage)"
     ],
     "coursework": [
       "Data Structures & Algorithms",
-      "Web Development & Full-Stack Engineering",
-      "AI/ML Fundamentals & Applications",
+      "Object-Oriented Programming",
       "Database Management Systems",
-      "Software Engineering & Design Patterns",
-      "Cloud Computing & Distributed Systems",
+      "Operating Systems",
       "Computer Networks",
-      "Operating Systems"
+      "Software Engineering & Design Patterns",
+      "Web Development & Full-Stack Engineering",
+      "Distributed Systems"
     ],
-    "skills": ["Data Structures", "Algorithms", "Web Development", "AI/ML", "Database Design", "Software Engineering"],
-    "relatedProjects": ["Fitness Tracker", "Heart Disease Prediction"]
+    "skills": [
+      "Data Structures",
+      "Algorithms",
+      "OOP",
+      "Database Design",
+      "Web Development",
+      "Software Engineering"
+    ],
+    "relatedProjects": [
+      "Midas System"
+    ]
   }
 ]
-
